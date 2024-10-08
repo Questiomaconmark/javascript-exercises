@@ -1,15 +1,7 @@
 const removeFromArray = function(inputArray, ...itemToRemove) {
-    for (let removeCount = 0; removeCount < itemToRemove.length; removeCount++){
-        let currentItemToRemove = itemToRemove[removeCount]
-        for(let inputCount =0; inputCount < inputArray.length; inputCount++){
-            let currentItemFromInput = inputArray[inputCount]
-            if(currentItemFromInput === currentItemToRemove){
-                inputArray.splice(inputArray.indexOf(currentItemFromInput),1);
-                inputCount = 0;
-            }
-        }
-    }
-    return inputArray;
+    // notes from glacing at solution. They dont use nested for loops to go through arrays (check array built in methods)
+    //they use arrow function for shorter code
+    return inputArray.filter(items => !itemToRemove.includes(items))
 
 };
 
